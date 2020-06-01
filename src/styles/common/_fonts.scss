@@ -1,63 +1,7 @@
 @font-face {
-  font-family: 'Gotham Rounded';
-  src: url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-Medium.woff2')  format('woff2'),
-  url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gotham Rounded';
-  src: url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-Bold.woff2') format('woff2'),
-  url('https://www.upc.pl/content/dam/www30-upc-pl/json/fonts/GothamRounded-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gotham Rounded';
-  src: url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-BoldItalic.woff2') format('woff2'),
-  url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
   font-family: 'Gotham Rounded Book';
   src: url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-Book.woff2') format('woff2'),
   url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-Book.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gotham Rounded';
-  src: url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-LightItalic.woff2') format('woff2'),
-  url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-LightItalic.woff') format('woff');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Gotham Rounded';
-  src: url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-MediumItalic.woff2') format('woff2'),
-  url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-MediumItalic.woff') format('woff');
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Gotham Rounded';
-  src: url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-Light.woff2') format('woff2'),
-  url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gotham Rounded Book';
-  src: url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-BookItalic.woff2') format('woff2'),
-  url('https://www.upc.pl/content/dam/www30-upc-pl/json/GothamRounded-BookItalic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
 }
