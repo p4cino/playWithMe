@@ -1,0 +1,58 @@
+.wrapper {
+  display: block;
+}
+
+:global {
+  .react-tabs__tab-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: #FAFAFA;
+  }
+
+  .react-tabs__tab {
+    @include mq($from: mobile, $until: desktop) {
+      font-size: rem(16px);
+      line-height: rem(24px);
+      padding-bottom: rem(5px);
+      text-align: center;
+    }
+
+    font-size: rem(18px);
+    line-height: rem(24px);
+    cursor: pointer;
+    font-weight: 500;
+    color: $color-blue-green;
+    margin-bottom: rem(10px);
+
+    &:nth-child(2) {
+      @include mq($from: mobile, $until: desktop) {
+        margin-left: rem(10px);
+      }
+
+      margin-left: rem(40px);
+    }
+  }
+
+  .react-tabs__tab--selected {
+    position: relative;
+    font-weight: 600;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: rem(3px);
+      background-color: $color-blue-green;
+    }
+  }
+
+  #callpage > div.cp-button-section.cp-callpage__button {
+    display: none !important;
+  }
+}

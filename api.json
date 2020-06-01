@@ -1,0 +1,198 @@
+[
+  {
+    "id": "1",
+    "title": "Multiroom HD - kolejny dekoder",
+    "subtitle": "2xKARTA SIM",
+    "img": "https://www.upc.pl/content/dam/www30-upc-pl/img/tv/kanaly-premium/premium_hbo_go.png",
+    "img2": "https://www.upc.pl/content/www30-upc-pl/pl/jcr:content/background_fullwidth/templatesection_667232855/section_content/nested_columns/parsys-1/imageresponsive.img.480.high.png/1580485809482.png",
+    "agreement": 24,
+    "agreementDesc": "Umowa na 24 miesiące",
+    "price": 29.99,
+    "activation": 10,
+    "leftCircle": [
+      "Router",
+      "w",
+      "<strong>Promocji</strong>"
+    ],
+    "rightCircle": [
+      "Router",
+      "w",
+      "Promocji"
+    ],
+    "content": [
+      "Rabat <strong>XX%</strong> na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Multiroom HD+ - kolejny dekoder",
+    "subtitle": "KARTA SIM",
+    "img": "https://www.upc.pl/content/dam/www30-upc-pl/img/tv/pakiety-dodatkowe/filmklub/filmklub-monitor.png",
+    "img2": "https://www.upc.pl/content/www30-upc-pl/pl/jcr:content/background_fullwidth/templatesection/section_content/nested_columns/parsys-0/grouping/grouped/imageresponsive.img.480.high.png/1588673960363.png",
+    "agreement": 24,
+    "agreementDesc": "Umowa na 24 miesiące",
+    "price": 14.99,
+    "activation": 20,
+    "leftCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "rightCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "content": [
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Multiroom HD+ - kolejny dekoder",
+    "subtitle": "KARTA SIM",
+    "img": "https://www.upc.pl/content/dam/www30-upc-pl/img/tv/pakiety-dodatkowe/filmklub/filmklub-monitor.png",
+    "img2": "https://www.upc.pl/content/www30-upc-pl/pl/jcr:content/background_fullwidth/templatesection/section_content/nested_columns/parsys-0/grouping/grouped/imageresponsive.img.480.high.png/1588673960363.png",
+    "agreement": 24,
+    "agreementDesc": "Umowa na 24 miesiące",
+    "price": 9.99,
+    "activation": 30,
+    "leftCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "rightCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "content": [
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E"
+    ],
+  },
+  {
+    "id": "4",
+    "title": "Multiroom HD+ - kolejny dekoder",
+    "subtitle": "KARTA SIM",
+    "img": "https://www.upc.pl/content/dam/www30-upc-pl/img/tv/pakiety-dodatkowe/filmklub/filmklub-monitor.png",
+    "img2": "https://www.upc.pl/content/www30-upc-pl/pl/jcr:content/background_fullwidth/templatesection/section_content/nested_columns/parsys-0/grouping/grouped/imageresponsive.img.480.high.png/1588673960363.png",
+    "agreement": 24,
+    "agreementDesc": "Umowa na 24 miesiące",
+    "price": 14.99,
+    "activation": 40,
+    "leftCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "rightCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3",
+    ],
+    "content": [
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Multiroom HD+ - kolejny dekoder",
+    "subtitle": "KARTA SIM",
+    "img": "https://www.upc.pl/content/dam/www30-upc-pl/img/tv/pakiety-dodatkowe/filmklub/filmklub-monitor.png",
+    "img2": "https://www.upc.pl/content/www30-upc-pl/pl/jcr:content/background_fullwidth/templatesection/section_content/nested_columns/parsys-0/grouping/grouped/imageresponsive.img.480.high.png/1588673960363.png",
+    "agreement": 24,
+    "agreementDesc": "Umowa na 24 miesiące",
+    "price": 14.99,
+    "activation": 50,
+    "leftCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "rightCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "content": [
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Multiroom HD+ - kolejny dekoder",
+    "subtitle": "KARTA SIM",
+    "img": "https://www.upc.pl/content/dam/www30-upc-pl/img/tv/pakiety-dodatkowe/filmklub/filmklub-monitor.png",
+    "img2": "https://www.upc.pl/content/www30-upc-pl/pl/jcr:content/background_fullwidth/templatesection/section_content/nested_columns/parsys-0/grouping/grouped/imageresponsive.img.480.high.png/1588673960363.png",
+    "agreement": 24,
+    "agreementDesc": "Umowa na 24 miesiące",
+    "price": 14.99,
+    "activation": 0,
+    "leftCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "rightCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "content": [
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Multiroom HD+ - kolejny dekoder",
+    "subtitle": "KARTA SIM",
+    "img": "https://www.upc.pl/content/dam/www30-upc-pl/img/tv/pakiety-dodatkowe/filmklub/filmklub-monitor.png",
+    "img2": "https://www.upc.pl/content/www30-upc-pl/pl/jcr:content/background_fullwidth/templatesection/section_content/nested_columns/parsys-0/grouping/grouped/imageresponsive.img.480.high.png/1588673960363.png",
+    "agreement": 24,
+    "agreementDesc": "Umowa na 24 miesiące",
+    "price": 14.99,
+    "activation": 0,
+    "leftCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "rightCircle": [
+      "Test 1",
+      "Test 2",
+      "Test 3"
+    ],
+    "content": [
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E",
+      "Rabat XX% na Samsung Galaxy A20E"
+    ]
+  }
+]
