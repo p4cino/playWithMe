@@ -26,7 +26,10 @@ class EventsBlocks extends React.Component {
                 after: 85
             },
             gap: 35,
-            perView: 1
+            perView: 1,
+            classes: {
+                activeSlide: styles.activeSlide,
+            }
         };
 
         return (
