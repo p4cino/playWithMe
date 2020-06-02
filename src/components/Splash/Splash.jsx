@@ -18,10 +18,11 @@ class Splash extends React.Component {
             }
         })
             .then(response => {
-                this.setState(prevState => ({
-                    profiles: response.data.results,
+                this.setState({
+                    profiles: response.data,
                     isLoading: false
-                }));
+                });
+                console.log(response.data);
             })
             .catch(error => {
                 console.log('Woops', error);
@@ -48,6 +49,9 @@ class Splash extends React.Component {
                             </li>
                             <li>
                                 {profile.email}
+                            </li>
+                            <li>
+                                {profile.preferences.localization.name}
                             </li>
                         </ul>
                     )

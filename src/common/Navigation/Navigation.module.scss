@@ -1,0 +1,38 @@
+.wrapper {
+  padding: rem($padding-normal);
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.avatar {
+  display: block;
+  position: relative;
+  width: rem($size-large);
+  height: rem($size-large);
+  cursor: pointer;
+
+  img {
+    border-radius: rem($size-small);
+  }
+}
+
+.avatarBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  width: rem($size-normal);
+  height: rem($size-normal);
+  text-align: center;
+  border-radius: 50%;
+  background-color: $color-red;
+  color: $color-white;
+  top: rem(-8px);
+  right: rem(-8px);
+  font-size: rem(12px);
+  font-weight: $font-weight-semibold;
+}
