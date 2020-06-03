@@ -1,7 +1,9 @@
-$padding-small: 24px;
+$padding-xs: 8px;
+$padding-small: 16px;
 $padding-normal: 24px;
 $padding-large: 48px;
 
+$size-xs: 8px;
 $size-small: 16px;
 $size-normal: 24px;
 $size-large: 48px;
@@ -9,7 +11,7 @@ $size-xl: 64px;
 
 
 
-@import "common/upc";
+@import "common/basic";
 @import "common/fonts";
 @import "common/mixins";
 @import "common/breakpoints";

@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: rem(48px 24px 26px 24px);
+}
+
+.heading {
+  width: 100%;
+  display: block;
+}
+
+.description {
+  display: block;
+}

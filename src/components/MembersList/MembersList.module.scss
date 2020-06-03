@@ -1,0 +1,74 @@
+.wrapper {
+  display: block;
+  padding: rem(0 24px);
+  margin: 0 auto;
+}
+
+.heading {
+  h2 {
+    padding: 0;
+  }
+}
+
+.activeSlide {
+  margin-left: rem($size-normal);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.counter {
+  display: flex;
+}
+
+.counterItem {
+  padding-left: rem(12px);
+  font-size: rem(14px);
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  p {
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top: rem(23px);
+  margin-bottom: rem(58px);
+}
+
+.listItem {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+
+  & + & {
+    padding-top: rem($padding-normal);
+  }
+}
+
+.listAvatar {
+  display: block;
+}
+
+.listUser {
+  display: block;
+  padding-left: rem($padding-xs);
+}
+
+.listUserType {
+  display: block;
+  color: $color-gray;
+  padding-left: rem($padding-xs);
+}

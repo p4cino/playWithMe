@@ -3,5 +3,6 @@ declare const styles: {
     readonly avatar: string;
     readonly avatarBadge: string;
     readonly buttonBack: string;
+    readonly hello: string;
 };
 export = styles;

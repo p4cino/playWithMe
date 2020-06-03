@@ -4,8 +4,9 @@ import {useHistory, useLocation} from 'react-router-dom'
 
 import styles from "./Navigation.module.scss";
 import robert from "../../assets/images/robert.png";
-import {Text} from "@chakra-ui/core/";
+import {Text, Icon} from "@chakra-ui/core/";
 import { AppContext } from "../../App";
+import Heading from "../../components/Heading/Heading";
 
 function Navigation() {
     const [count] = useContext(AppContext);
@@ -17,8 +18,15 @@ function Navigation() {
         <div className={styles.wrapper}>
             {location !== "/" && (
                 <button className={styles.buttonBack} onClick={() => history.goBack()}>
-                    Event
+                    <Icon name="arrow-back" size="24px" /> Back
                 </button>
+            )}
+            {location === "/" && (
+                <div className={styles.hello}>
+                    <Heading style={{fontStyle: 'italic', padding: 0}}>
+                        Hi! Robert
+                    </Heading>
+                </div>
             )}
 
             <div className={styles.avatar}>

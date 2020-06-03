@@ -1,5 +1,6 @@
 .wrapper {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   overflow: hidden;
   width: 100vw;
@@ -9,12 +10,11 @@
   border-bottom-left-radius: rem($size-normal);
   border-bottom-right-radius: rem($size-normal);
   color: $color-white;
-
-  //img {
-  //  height: 100%;
-  //  width: 100%;
-  //  filter: brightness(75%);
-  //}
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  padding-left:rem(24px) ;
+  //filter: brightness(75%);
 }
 
 .heading {
@@ -23,10 +23,32 @@
   font-size: rem(24px);
   font-weight: rem($font-weight-black);
   line-height: rem($font-lineHeight-black);
-  padding-bottom: rem($padding-normal);
+  padding-top: rem(60px);
+  padding-bottom: rem(30px);
   font-style: italic;
 }
 
 .footer {
-  display: block;
+  display: flex;
+  width: 100%;
+}
+
+.difficulty {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  font-size: rem(14px);
+  min-width: rem(200px);
+}
+
+.icon {
+  fill: $color-white;
+  padding-right: rem(16px);
+}
+
+.badgeWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding-right: rem(24px);
 }
