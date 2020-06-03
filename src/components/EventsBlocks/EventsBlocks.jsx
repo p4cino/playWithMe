@@ -1,5 +1,4 @@
 import React from 'react';
-import Slider from "react-slick";
 
 import styles from './EventsBlocks.module.scss';
 import Heading from "../Heading/Heading";

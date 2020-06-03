@@ -1,0 +1,80 @@
+.wrapper {
+  display: block;
+  margin-bottom: rem($size-normal);
+  width: 100vw;
+  overflow: hidden;
+}
+
+.heading {
+  padding: rem(0 $padding-normal);
+}
+
+.list {
+  position: relative;
+  display: block;
+}
+
+.listItem {
+  position: relative;
+  display: flex;
+  margin-bottom: rem(32px);
+
+  &:last-child {
+    .listDayColumn {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.listDayColumn {
+  position: relative;
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: rem(136px);
+    width: rem(2px);
+    background: $color-gray-divider;
+    top: rem(106px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.dayNumber {
+  text-align: center;
+  width: 100%;
+  font-weight: $font-weight-black;
+  line-height: rem($font-lineHeight-semibold);
+  font-size: rem(24px);
+  color: $color-black;
+  padding-bottom: rem(4px);
+}
+
+.dayName {
+  width: 100%;
+  text-align: center;
+  color: $color-gray;
+  font-size: rem(14px);
+  font-style: italic;
+  font-weight: $font-weight-black;
+}
+
+.listEventColumn {
+  width: 80%;
+  display: block;
+}
+
+.eventWrapper {
+  margin-right: -10%;
+}
+

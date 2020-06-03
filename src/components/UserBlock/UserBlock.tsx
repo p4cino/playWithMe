@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {Image} from "@chakra-ui/core";
+import {Image, Skeleton} from "@chakra-ui/core";
 
 import styles from './UserBlock.module.scss';
 
@@ -20,7 +20,9 @@ const UserBlock: FunctionComponent<Props> = (
 
     return (
         <figure className={styles.wrapper} {...props}>
-            <Image className={styles.image} src={img} alt="" fallbackSrc="https://via.placeholder.com/64x64"/>
+            <Skeleton height="64px" width="64px" borderRadius={14} isLoaded>
+                <Image onLoad={() => console.log("test")} className={styles.image} src={img} alt=""/>
+            </Skeleton>
             <figcaption className="">
             </figcaption>
         </figure>
