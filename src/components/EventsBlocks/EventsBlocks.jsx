@@ -7,14 +7,14 @@ import SliderGlide from "../SliderGlide/SliderGlide";
 
 
 class EventsBlocks extends React.Component {
-    constructor(props) {
-        super(props);
-        // this.state = {
-        // };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //     };
+    // }
 
-    componentDidMount() {
-    }
+    // componentDidMount() {
+    // }
 
     render() {
         const options = {

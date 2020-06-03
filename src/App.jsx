@@ -1,29 +1,34 @@
-import React from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    useLocation,
 } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import {ThemeProvider, CSSReset, theme} from "@chakra-ui/core";
 import Navigation from "./common/Navigation/Navigation";
+import Event from "./pages/Event/Event";
 
 const fonts = ["heading", "body", "mono"];
 fonts.heading = '"Poppins", sans-serif';
 fonts.body = '"Poppins", sans-serif';
 fonts.mono = '"Poppins", sans-serif';
-
 const customTheme = {
     ...theme,
     fonts
 };
 
+export const AppContext = createContext();
+
 function App() {
+    const [count, setCount] = useState(0);
+
     return (
         <ThemeProvider theme={customTheme}>
-            <CSSReset/>
-            <Router>
+            <AppContext.Provider value={[count, setCount]}>
+                <CSSReset/>
+
                 {/*<nav>*/}
                 {/*    <ul>*/}
                 {/*        <li>*/}
@@ -33,11 +38,14 @@ function App() {
                 {/*</nav>*/}
                 <Navigation/>
                 <Switch>
-                    <Route path="/">
+                    <Route exact path="/">
                         <Homepage/>
                     </Route>
+                    <Route path="/event/:id">
+                        <Event/>
+                    </Route>
                 </Switch>
-            </Router>
+            </AppContext.Provider>
         </ThemeProvider>
     );
 }

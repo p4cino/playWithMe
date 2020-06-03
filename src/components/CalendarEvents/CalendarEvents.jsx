@@ -7,14 +7,14 @@ import {Text} from "@chakra-ui/core/";
 
 
 class CalendarEvents extends React.Component {
-    constructor(props) {
-        super(props);
-        // this.state = {
-        // };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //     };
+    // }
 
-    componentDidMount() {
-    }
+    // componentDidMount() {
+    // }
 
     render() {
 

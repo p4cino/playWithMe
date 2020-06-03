@@ -1,4 +1,6 @@
 .wrapper {
+  position: fixed;
+  z-index: 2;
   padding: rem($padding-normal);
   width: 100vw;
   display: flex;
@@ -35,4 +37,10 @@
   right: rem(-8px);
   font-size: rem(12px);
   font-weight: $font-weight-semibold;
+}
+
+.buttonBack {
+  color: $color-white;
+  font-weight: $font-weight-semibold;
+  font-style: italic;
 }

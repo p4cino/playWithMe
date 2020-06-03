@@ -1,51 +1,35 @@
-import React from 'react';
-import HamburgerMenu from "react-hamburger-menu";
+import React, {useContext, useEffect, useState} from 'react';
+import {useHistory, useLocation} from 'react-router-dom'
+// import HamburgerMenu from "react-hamburger-menu";
 
 import styles from "./Navigation.module.scss";
 import robert from "../../assets/images/robert.png";
 import {Text} from "@chakra-ui/core/";
+import { AppContext } from "../../App";
 
-class Navigation extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false,
-        };
-    }
+function Navigation() {
+    const [count] = useContext(AppContext);
+    const location = useLocation().pathname;
+    const history = useHistory();
+    console.log(location);
 
-    hamburgerClick = () => {
-        console.log("click");
-    };
+    return (
+        <div className={styles.wrapper}>
+            {location !== "/" && (
+                <button className={styles.buttonBack} onClick={() => history.goBack()}>
+                    Event
+                </button>
+            )}
 
-    componentDidMount() {
-    }
-
-    render() {
-        // const {profiles} = this.state;
-
-        return (
-            <div className={styles.wrapper}>
-                <HamburgerMenu
-                    isOpen={this.state.open}
-                    menuClicked={() => this.setState({open: !this.state})}
-                    width={18}
-                    height={15}
-                    strokeWidth={2}
-                    rotate={0}
-                    color='black'
-                    borderRadius={0}
-                    animationDuration={0.5}
-                />
-
-                <div className={styles.avatar}>
-                    <img src={robert} alt=""/>
-                    <div className={styles.avatarBadge}>
-                        <Text fontSize="xs">3</Text>
-                    </div>
+            <div className={styles.avatar}>
+                <img src={robert} alt=""/>
+                <div className={styles.avatarBadge}>
+                    <Text fontSize="xs">3</Text>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default Navigation;
+

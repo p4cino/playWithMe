@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {Avatar, AvatarBadge, AvatarGroup, Stack, Image, Skeleton, Text} from "@chakra-ui/core";
+import {Avatar, AvatarGroup, Stack, Image, Skeleton, Text} from "@chakra-ui/core";
 
 import evenImage from '../../assets/images/event.png'
 import styles from './EventBlock.module.scss';
@@ -27,7 +27,7 @@ const EventBlock: FunctionComponent<Props> = (
     return (
         <figure className={styles.wrapper} {...props}>
             <Skeleton height="160px" isLoaded>
-                <Image src={evenImage} alt="" />
+                <Image src={evenImage} alt=""/>
             </Skeleton>
             <figcaption className={styles.description}>
                 <div className={styles.column}>

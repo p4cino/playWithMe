@@ -1,0 +1,32 @@
+.wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: rem(240px);
+  background-size: cover;
+  transform: translateZ(0);
+  border-bottom-left-radius: rem($size-normal);
+  border-bottom-right-radius: rem($size-normal);
+  color: $color-white;
+
+  //img {
+  //  height: 100%;
+  //  width: 100%;
+  //  filter: brightness(75%);
+  //}
+}
+
+.heading {
+  display: block;
+  width: rem(270px);
+  font-size: rem(24px);
+  font-weight: rem($font-weight-black);
+  line-height: rem($font-lineHeight-black);
+  padding-bottom: rem($padding-normal);
+  font-style: italic;
+}
+
+.footer {
+  display: block;
+}

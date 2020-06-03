@@ -7,25 +7,25 @@ import UserBlock from "../UserBlock/UserBlock";
 import robert from '../../assets/images/robert.png'
 
 class UsersBlocks extends React.Component {
-    constructor(props) {
-        super(props);
-        // this.state = {
-        // };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //     };
+    // }
 
-    componentDidMount() {
-    }
+    // componentDidMount() {
+    // }
 
     render() {
         const options = {
-            type: 'slider',
+            type: 'carousel',
             startAt: 0,
             peek: {
-                before: 0,
-                after: 0
+                before: 16,
+                after: -28
             },
             gap: 24,
-            perView: 4,
+            perView: 5,
             classes: {
                 activeSlide: styles.activeSlide,
             }

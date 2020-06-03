@@ -21,7 +21,7 @@ const UserBlock: FunctionComponent<Props> = (
     return (
         <figure className={styles.wrapper} {...props}>
             <Skeleton height="64px" width="64px" borderRadius={14} isLoaded>
-                <Image onLoad={() => console.log("test")} className={styles.image} src={img} alt=""/>
+                <Image className={styles.image} src={img} alt=""/>
             </Skeleton>
             <figcaption className="">
             </figcaption>
