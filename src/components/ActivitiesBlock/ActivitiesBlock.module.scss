@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: rem(48px 24px 26px 24px);
+}
+
+.heading {
+  width: 100%;
+  display: block;
+}
+
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  justify-items: center;
+  align-content: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: rem(5px 10px);
+  margin: rem(4px 0);
+  vertical-align: baseline;
+  border: rem(2px solid $color-brand);
+  border-radius: rem(16px);
+  color: $color-brand;
+  font-size: rem(10px);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  margin-right: rem(8px);
+}

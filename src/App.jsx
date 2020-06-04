@@ -5,6 +5,7 @@ import {ThemeProvider, CSSReset, theme} from "@chakra-ui/core";
 import Navigation from "./common/Navigation/Navigation";
 import Event from "./pages/Event/Event";
 import Login from "./pages/Login/Login";
+import Profile from "./pages/Profile/Profile";
 
 const fonts = ["heading", "body", "mono"];
 fonts.heading = '"Poppins", sans-serif';
@@ -56,6 +57,15 @@ const customIcons = {
             </svg>
         )
     },
+    newCalendarSearch: {
+        path: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.39" height="22.39" viewBox="0 0 19.39 22.39">
+                <path
+                    d="M15.5,12a4.5,4.5,0,0,1,3.81,6.9L22.39,22,21,23.39l-3.12-3.07A4.5,4.5,0,1,1,15.5,12m0,2A2.5,2.5,0,1,0,18,16.5,2.5,2.5,0,0,0,15.5,14M19,8H5V19H9.5a6.538,6.538,0,0,0,1.31,2H5a2,2,0,0,1-2-2V5A1.993,1.993,0,0,1,5,3H6V1H8V3h8V1h2V3h1a2,2,0,0,1,2,2v8.03A6.789,6.789,0,0,0,19,11Z"
+                    transform="translate(-3 -1)"/>
+            </svg>
+        )
+    },
 };
 const customTheme = {
     ...theme,
@@ -95,6 +105,9 @@ function App() {
                             </Route>
                             <Route exact path="/event/:id">
                                 <Event/>
+                            </Route>
+                            <Route exact path="/profile/:id">
+                                <Profile/>
                             </Route>
                         </>
                     )}

@@ -8,7 +8,9 @@ import {BrowserRouter as Router} from "react-router-dom";
 ReactDOM.render(
     <React.StrictMode>
         <Router>
-            <App/>
+            <div style={{maxWidth: '420px', margin: '0 auto', overflowX: 'hidden'}}>
+                <App/>
+            </div>
         </Router>
     </React.StrictMode>,
     document.getElementById('root')

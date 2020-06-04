@@ -17,6 +17,7 @@ function EventsBlocks() {
         await API.get(`/event/${context.userID}/recommended-events`)
             .then(response => {
                 setEvents(response.data.events);
+                // console.log(response.data.events);
             })
             .catch(error => {
                 console.log('Woops', error);
@@ -48,11 +49,20 @@ function EventsBlocks() {
             </div>
             {events.length !== 0 && (
                 <SliderGlide options={options}>
-                    {events.map((event, index) =>
-                        <div key={`EventsBlock-${index}`}>
-                            <EventBlock id={event.id} heading={event.name} date={event.startDateFormatted}
-                                        localization={event.localization}/>
-                        </div>
+                    {events.map((event, index) => {
+                            return (
+                                <div key={`EventsBlock-${index}`}>
+                                    <EventBlock
+                                        img={event.backgroundUrl}
+                                        id={event.id}
+                                        heading={event.name}
+                                        date={event.startDateFormatted}
+                                        localization={event.localization}
+                                        participants={event.participants}
+                                        avatar={event.owner.profilePhotoUrl}
+                                    />
+                                </div>)
+                        }
                     )}
                 </SliderGlide>
             )}

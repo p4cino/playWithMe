@@ -3,8 +3,8 @@ import {Avatar, AvatarGroup, Stack, Image, Skeleton, Text} from "@chakra-ui/core
 // @ts-ignore
 import {useHistory} from 'react-router-dom';
 
-import evenImage from '../../assets/images/event.png'
 import styles from './EventBlock.module.scss';
+import SliderGlide from "../SliderGlide/SliderGlide";
 
 
 interface Props {
@@ -14,6 +14,8 @@ interface Props {
     heading?: string;
     date?: string;
     localization?: string;
+    avatar?: string;
+    participants: [];
 
     [key: string]: any;
 }
@@ -26,6 +28,8 @@ const EventBlock: FunctionComponent<Props> = (
         heading,
         date,
         localization,
+        avatar,
+        participants,
         children,
         ...props
     }
@@ -34,9 +38,7 @@ const EventBlock: FunctionComponent<Props> = (
 
     return (
         <figure onClick={() => history.replace(`/event/${id}`)} className={styles.wrapper} {...props}>
-            <Skeleton height="160px" isLoaded>
-                <Image src={evenImage} alt=""/>
-            </Skeleton>
+            <Image src={img} alt="" fallbackSrc="https://via.placeholder.com/160"/>
             <figcaption className={styles.description}>
                 <div className={styles.column}>
                     <Text fontSize={"sm"}>{date}</Text>
@@ -44,12 +46,21 @@ const EventBlock: FunctionComponent<Props> = (
                 <div className={styles.column}>
                     <div className={styles.avatars}>
                         <Stack isInline>
-                            <AvatarGroup spacing="-5px" size="xs" color="black" max={2}>
-                                <Avatar border="none" name="Dan Abrahmov" src="https://bit.ly/dan-abramov"/>
-                                <Avatar border="none" name="Kola Tioluwani" src="https://bit.ly/tioluwani-kolawole"/>
-                                <Avatar border="none" name="Kent Dodds" src="https://bit.ly/kent-c-dodds"/>
-                                <Avatar border="none" name="Ryan Florence" src="https://bit.ly/ryan-florence"/>
-                            </AvatarGroup>
+                            {participants?.length === 0 && (
+                                <Avatar size="xs" border="none" name="Dan Abrahmov" src={avatar}/>
+                            )}
+                            {participants?.length !== 0 && (
+                                <AvatarGroup spacing="-5px" size="xs" color="black" max={2}>
+                                    {participants?.map((participant: any, index: number) =>
+                                        <Avatar
+                                            key={`Avatars-${index}`}
+                                            border="none"
+                                            name="Ryan Florence"
+                                            src={participant.profilePhotoUrl}
+                                        />
+                                    )}
+                                </AvatarGroup>
+                            )}
                         </Stack>
                     </div>
                 </div>

@@ -50,7 +50,7 @@ function UsersBlocks() {
                 <SliderGlide options={options}>
                     {users.map((user, index) =>
                         <div key={`UserssBlock-${index}`}>
-                            <UserBlock id={user.id} img={robert}/>
+                            <UserBlock id={user.id} img={user.profilePhotoUrl}/>
                         </div>
                     )}
                 </SliderGlide>

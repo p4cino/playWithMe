@@ -35,19 +35,19 @@ function Event() {
                 <Box w="100%" py="5px">
                     <Icon size="24px" name="newCalendar"/>
                     <Text display="inline">
-                        Lokal, ul. Testowa 61a, 90-009 Łódź
+                        {event.startDate}
                     </Text>
                 </Box>
                 <Box w="100%" py="5px">
                     <Icon size="24px" name="newClock"/>
                     <Text display="inline">
-                        Lokal, ul. Testowa 61a, 90-009 Łódź
+                        {event.startTimeFormatted} - {event.startTimeFormatted}
                     </Text>
                 </Box>
                 <Box w="100%" py="5px" pb="16px">
                     <Icon size="24px" name="newMap"/>
                     <Text display="inline">
-                        Lokal, ul. Testowa 61a, 90-009 Łódź
+                        {event.localizationDetails}
                     </Text>
                 </Box>
             </div>

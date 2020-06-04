@@ -34,27 +34,33 @@ function CalendarEvents() {
             </div>
             <ul className={styles.list}>
                 {events.length !== 0 && (
-                    events.map((event, index) =>
-                        <li className={styles.listItem} key={`calendar-${index}`}>
-                            <div className={styles.listDayColumn}>
-                                <div className={styles.dayNumber}>
-                                    <Text>{event.startDateFormatted}</Text>
-                                </div>
-                                <div className={styles.dayName}>
-                                    <Text>FRI</Text>
-                                </div>
-                            </div>
-                            <div className={styles.listEventColumn}>
-                                <div className={styles.eventWrapper}>
-                                    <EventBlock
-                                        id={event.id}
-                                        heading={event.name}
-                                        date={event.startDateFormatted}
-                                        localization={event.localization}
-                                    />
-                                </div>
-                            </div>
-                        </li>
+                    events.map((event, index) => {
+                        if(!event.recommendedByHistory && !event.recommendedByFavorite && !event.recommendedByRatings)
+                            return (
+                                <li className={styles.listItem} key={`calendar-${index}`}>
+                                    <div className={styles.listDayColumn}>
+                                        <div className={styles.dayNumber}>
+                                            <Text>{event.startDateFormatted.slice(0, 2)}</Text>
+                                        </div>
+                                        <div className={styles.dayName}>
+                                            <Text>{event.dayDetails.day.slice(0,3)}</Text>
+                                        </div>
+                                    </div>
+                                    <div className={styles.listEventColumn}>
+                                        <div className={styles.eventWrapper}>
+                                            <EventBlock
+                                                id={event.id}
+                                                heading={event.name}
+                                                date={event.startDateFormatted}
+                                                localization={event.localization}
+                                                img={event.backgroundUrl}
+                                                participants={event.participants}
+                                                avatar={event.owner.profilePhotoUrl}
+                                            />
+                                        </div>
+                                    </div>
+                                </li>)
+                        }
                     )
                 )}
                 {events.length === 0 && (

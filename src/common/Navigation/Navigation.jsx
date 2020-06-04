@@ -27,13 +27,18 @@ function Navigation() {
         return (
             <div className={styles.wrapper}>
                 {location !== "/" && (
-                    <button className={styles.buttonBack} onClick={() => console.log(history.replace("/"))}>
+                    <button className={styles.buttonBack} onClick={() => history.replace("/")}>
                         <Icon name="arrow-back" size="24px"/> Back
                     </button>
                 )}
                 {location === "/" && (
-                    <IconButton backgroundColor="white" color="black" variantColor="blue" aria-label="Search database"
-                                icon="search"/>
+                    <IconButton
+                        backgroundColor="white"
+                        color="black"
+                        variantColor="blue"
+                        aria-label="Search database"
+                        icon="newCalendarSearch"
+                    />
                 )}
                 <div>
                     <Text fontWeight="bold">

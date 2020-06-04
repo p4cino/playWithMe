@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: rem(0 24px 26px 24px);
+}
+
+.heading {
+  width: 100%;
+  display: block;
+}
+
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  justify-items: center;
+  align-content: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+}
+
+//readonly day: string;
+//readonly event: string;
+//readonly eventName: string;
+//readonly eventLocalization: string;
