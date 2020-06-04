@@ -1,5 +1,5 @@
 import React, {createContext, useState} from 'react';
-import {Switch, Route} from "react-router-dom";
+import {Switch, Route, useLocation, useHistory} from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import {ThemeProvider, CSSReset, theme} from "@chakra-ui/core";
 import Navigation from "./common/Navigation/Navigation";
@@ -66,10 +66,21 @@ const customTheme = {
     }
 };
 
+
 export const AppContext = createContext();
 
 function App() {
     const [userID, setUserID] = useState(0);
+    const location = useLocation().pathname;
+    const history = useHistory();
+
+    if (location !== "/login" && userID === 0) {
+        if (localStorage.getItem('myID')) {
+            setUserID(parseInt(localStorage.getItem('myID')));
+        } else {
+            history.replace("/login");
+        }
+    }
 
     return (
         <ThemeProvider theme={customTheme}>

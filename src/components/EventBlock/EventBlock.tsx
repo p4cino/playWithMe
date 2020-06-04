@@ -44,11 +44,11 @@ const EventBlock: FunctionComponent<Props> = (
                 <div className={styles.column}>
                     <div className={styles.avatars}>
                         <Stack isInline>
-                            <AvatarGroup size="xs" max={2}>
+                            <AvatarGroup spacing="-5px" size="xs" color="black" max={2}>
                                 <Avatar border="none" name="Dan Abrahmov" src="https://bit.ly/dan-abramov"/>
-                                <Avatar name="Kola Tioluwani" src="https://bit.ly/tioluwani-kolawole"/>
-                                <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds"/>
-                                <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence"/>
+                                <Avatar border="none" name="Kola Tioluwani" src="https://bit.ly/tioluwani-kolawole"/>
+                                <Avatar border="none" name="Kent Dodds" src="https://bit.ly/kent-c-dodds"/>
+                                <Avatar border="none" name="Ryan Florence" src="https://bit.ly/ryan-florence"/>
                             </AvatarGroup>
                         </Stack>
                     </div>

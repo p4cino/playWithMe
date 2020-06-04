@@ -23,6 +23,7 @@ function Login() {
         })
             .then(response => {
                 if (response.data.id !== 0) {
+                    localStorage.setItem('myID', response.data.id);
                     context.setUserID(response.data.id);
                     history.replace("/");
                 }

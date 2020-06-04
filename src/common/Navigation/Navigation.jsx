@@ -1,22 +1,20 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import {useHistory, useLocation} from 'react-router-dom';
 
 import styles from "./Navigation.module.scss";
 import robert from "../../assets/images/robert.png";
 import {Text, Icon, IconButton} from "@chakra-ui/core/";
-import { AppContext } from "../../App";
+import {AppContext} from "../../App";
 import Heading from "../../components/Heading/Heading";
 
 function getPageName(value) {
     switch (value) {
         case '/':
             return 'Home';
-            break;
-            case '/event/':
-            return 'event';
-            break;
+        case '/event/':
+            return 'Event';
         default:
-            console.log(`Page`);
+            return 'Page';
     }
 }
 
@@ -25,21 +23,17 @@ function Navigation() {
     const location = useLocation().pathname;
     const history = useHistory();
 
-    console.log(location);
-    if (location !== "/login" && context.userID === 0) {
-        history.replace("/login");
-    }
-
     if (context.userID !== 0) {
         return (
             <div className={styles.wrapper}>
                 {location !== "/" && (
-                    <button className={styles.buttonBack} onClick={() => history.goBack()}>
-                        <Icon name="arrow-back" size="24px" /> Back
+                    <button className={styles.buttonBack} onClick={() => console.log(history.replace("/"))}>
+                        <Icon name="arrow-back" size="24px"/> Back
                     </button>
                 )}
                 {location === "/" && (
-                    <IconButton backgroundColor="white" color="black" variantColor="blue" aria-label="Search database" icon="search" />
+                    <IconButton backgroundColor="white" color="black" variantColor="blue" aria-label="Search database"
+                                icon="search"/>
                 )}
                 <div>
                     <Text fontWeight="bold">
@@ -54,9 +48,7 @@ function Navigation() {
                 </div>
             </div>
         );
-    }
-    else
-    {
+    } else {
         return (
             <div className={styles.wrapper}>
                 <Heading style={{textAlign: 'center', width: '100%', padding: '0'}}>

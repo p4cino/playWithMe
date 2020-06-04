@@ -1,17 +1,46 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 
 import styles from './EventCover.module.scss';
-import {Text, Icon, Box} from "@chakra-ui/core/";
+import {Text, Icon} from "@chakra-ui/core/";
 
 import bg from '../../assets/images/event.png'
 import Badge from "@chakra-ui/core/dist/Badge";
 
-function EventCover() {
+interface Props {
+    id?: string;
+    name?: string;
+    effortLevel: string;
+    category?: string;
+}
+
+const EventCover: FunctionComponent<Props> = (
+    {
+        id,
+        name,
+        effortLevel,
+        category,
+        ...props
+    }
+) => {
+
+    function getDifficultyName (value: string) : string {
+        switch (value) {
+            case "1":
+                return 'Easy';
+            case "2":
+                return 'Medium';
+            case "3":
+                return 'Hard';
+            default:
+                return 'Medium';
+        }
+    }
+
     return (
-        <div className={styles.wrapper} style={{backgroundImage: `url(${bg})`}}>
+        <div className={styles.wrapper} style={{backgroundImage: `url(${bg})`}} {...props}>
             <div>
                 <div className={styles.heading}>
-                    Blues jam session with Artur
+                    {name}
                 </div>
             </div>
             <div className={styles.footer}>
@@ -20,20 +49,20 @@ function EventCover() {
                         <Icon size="2rem" name="podium"/>
                     </div>
                     <Text>
-                        Difficulty: Medium
+                        Difficulty: {getDifficultyName(effortLevel)}
                     </Text>
                 </div>
                 <div className={styles.badgeWrapper}>
                     <Badge variantColor="purple" backgroundColor="#6335CC" color="#fff" px="4" py="1"
                            rounded="14px" textTransform="initial">
                         <Text>
-                            Play Music
+                            {category}
                         </Text>
                     </Badge>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default EventCover;
