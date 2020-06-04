@@ -1,12 +1,10 @@
 import React, {createContext, useState} from 'react';
-import {
-    Switch,
-    Route,
-} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import {ThemeProvider, CSSReset, theme} from "@chakra-ui/core";
 import Navigation from "./common/Navigation/Navigation";
 import Event from "./pages/Event/Event";
+import Login from "./pages/Login/Login";
 
 const fonts = ["heading", "body", "mono"];
 fonts.heading = '"Poppins", sans-serif';
@@ -71,26 +69,26 @@ const customTheme = {
 export const AppContext = createContext();
 
 function App() {
-    const [count, setCount] = useState(0);
+    const [userID, setUserID] = useState(0);
 
     return (
         <ThemeProvider theme={customTheme}>
-            <AppContext.Provider value={[count, setCount]}>
+            <AppContext.Provider value={{userID, setUserID}}>
                 <CSSReset/>
-                {/*<nav>*/}
-                {/*    <ul>*/}
-                {/*        <li>*/}
-                {/*            <Link to="/">Home</Link>*/}
-                {/*        </li>*/}
-                {/*    </ul>*/}
-                {/*</nav>*/}
                 <Navigation/>
                 <Switch>
-                    <Route exact path="/">
-                        <Homepage/>
-                    </Route>
-                    <Route path="/event/:id">
-                        <Event/>
+                    {userID !== 0 && (
+                        <>
+                            <Route exact path="/">
+                                <Homepage/>
+                            </Route>
+                            <Route exact path="/event/:id">
+                                <Event/>
+                            </Route>
+                        </>
+                    )}
+                    <Route exact path="/login">
+                        <Login/>
                     </Route>
                 </Switch>
             </AppContext.Provider>

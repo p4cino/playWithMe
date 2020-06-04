@@ -1,58 +1,76 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
 import styles from './EventsBlocks.module.scss';
 import Heading from "../Heading/Heading";
 import EventBlock from "../EventBlock/EventBlock";
 import SliderGlide from "../SliderGlide/SliderGlide";
+import API from "../../api";
+import {AppContext} from "../../App";
+import {Skeleton} from "@chakra-ui/core";
 
 
-class EventsBlocks extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //     };
-    // }
+function EventsBlocks() {
+    const context = useContext(AppContext);
+    const [events, setEvents] = useState([]);
 
-    // componentDidMount() {
-    // }
+    const getData = async () => {
+        await API.get(`/event/${context.userID}/recommended-events`)
+            .then(response => {
+                setEvents(response.data.events);
+            })
+            .catch(error => {
+                console.log('Woops', error);
+            });
+    };
 
-    render() {
-        const options = {
-            type: 'slider',
-            startAt: 0,
-            peek: {
-                before: 0,
-                after: 85
-            },
-            gap: 35,
-            perView: 1,
-            classes: {
-                activeSlide: styles.activeSlide,
-            }
-        };
+    useEffect(() => {
+        getData();
+    }, [context]);
 
-        return (
-            <div className={styles.wrapper}>
-                <div className={styles.heading}>
-                    <Heading>Matched Events</Heading>
-                </div>
+    const options = {
+        type: 'slider',
+        startAt: 0,
+        peek: {
+            before: 0,
+            after: 85
+        },
+        gap: 35,
+        perView: 1,
+        classes: {
+            activeSlide: styles.activeSlide,
+        }
+    };
+
+    return (
+        <div className={styles.wrapper}>
+            <div className={styles.heading}>
+                <Heading>Matched Events</Heading>
+            </div>
+            {events.length !== 0 && (
                 <SliderGlide options={options}>
-                    <div>
-                        <EventBlock/>
+                    {events.map((event, index) =>
+                        <div key={`EventsBlock-${index}`}>
+                            <EventBlock id={event.id} heading={event.name} date={event.startDateFormatted}
+                                        localization={event.localization}/>
+                        </div>
+                    )}
+                </SliderGlide>
+            )}
+            {events.length === 0 && (
+                <SliderGlide options={options}>
+                    <div key={`EventsBlock-1`}>
+                        <Skeleton height="160px"/>
                     </div>
-                    <div>
-                        <EventBlock/>
+                    <div key={`EventsBlock-2`}>
+                        <Skeleton height="160px"/>
                     </div>
-                    <div>
-                        <EventBlock/>
-                    </div>
-                    <div>
-                        <EventBlock/>
+                    <div key={`EventsBlock-3`}>
+                        <Skeleton height="160px"/>
                     </div>
                 </SliderGlide>
-            </div>
-        );
-    }
+            )}
+        </div>
+    );
 }
 
 export default EventsBlocks;

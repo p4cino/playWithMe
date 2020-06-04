@@ -1,70 +1,71 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
 import styles from './UsersBlocks.module.scss';
 import Heading from "../Heading/Heading";
 import SliderGlide from "../SliderGlide/SliderGlide";
 import UserBlock from "../UserBlock/UserBlock";
 import robert from '../../assets/images/robert.png'
+import {AppContext} from "../../App";
+import API from "../../api";
+import {Skeleton} from "@chakra-ui/core";
 
-class UsersBlocks extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //     };
-    // }
+function UsersBlocks() {
+    const context = useContext(AppContext);
+    const [users, setUsers] = useState([]);
 
-    // componentDidMount() {
-    // }
+    const getData = async () => {
+        await API.get(`profile/${context.userID}/followed`)
+            .then(response => {
+                setUsers(response.data);
+            })
+            .catch(error => {
+                console.log('Woops', error);
+            });
+    };
 
-    render() {
-        const options = {
-            type: 'carousel',
-            startAt: 0,
-            peek: {
-                before: 16,
-                after: -28
-            },
-            gap: 24,
-            perView: 5,
-            classes: {
-                activeSlide: styles.activeSlide,
-            }
-        };
+    useEffect(() => {
+        getData();
+    }, [context]);
 
-        return (
-            <div className={styles.wrapper}>
-                <div className={styles.heading}>
-                    <Heading>Followed Users</Heading>
-                </div>
-                <SliderGlide options={options}>
-                    <div>
-                        <UserBlock img={robert}/>
-                    </div>
-                    <div>
-                        <UserBlock img={robert}/>
-                    </div>
-                    <div>
-                        <UserBlock img={robert}/>
-                    </div>
-                    <div>
-                        <UserBlock img={robert}/>
-                    </div>
-                    <div>
-                        <UserBlock img={robert}/>
-                    </div>
-                    <div>
-                        <UserBlock img={robert}/>
-                    </div>
-                    <div>
-                        <UserBlock img={robert}/>
-                    </div>
-                    <div>
-                        <UserBlock img={robert}/>
-                    </div>
-                </SliderGlide>
+    const options = {
+        type: 'carousel',
+        startAt: 0,
+        peek: {
+            before: 16,
+            after: -28
+        },
+        gap: 24,
+        perView: 5,
+        classes: {
+            activeSlide: styles.activeSlide,
+        }
+    };
+
+    return (
+        <div className={styles.wrapper}>
+            <div className={styles.heading}>
+                <Heading>Followed Users</Heading>
             </div>
-        );
-    }
+            {users.length !== 0 && (
+                <SliderGlide options={options}>
+                    {users.map((user, index) =>
+                        <div key={`UserssBlock-${index}`}>
+                            <UserBlock id={user.id} img={robert}/>
+                        </div>
+                    )}
+                </SliderGlide>
+            )}
+            {users.length === 0 && (
+                <SliderGlide options={options}>
+                    <div><Skeleton height="64px"/></div>
+                    <div><Skeleton height="64px"/></div>
+                    <div><Skeleton height="64px"/></div>
+                    <div><Skeleton height="64px"/></div>
+                    <div><Skeleton height="64px"/></div>
+                </SliderGlide>
+            )}
+        </div>
+    );
 }
 
 export default UsersBlocks;

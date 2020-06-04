@@ -4,6 +4,7 @@ import {Image, Skeleton} from "@chakra-ui/core";
 import styles from './UserBlock.module.scss';
 
 interface Props {
+    id: string;
     img: string;
     user?: [];
 
@@ -12,6 +13,7 @@ interface Props {
 
 const UserBlock: FunctionComponent<Props> = (
     {
+        id,
         img,
         user,
         ...props
@@ -19,7 +21,7 @@ const UserBlock: FunctionComponent<Props> = (
 ) => {
 
     return (
-        <figure className={styles.wrapper} {...props}>
+        <figure onClick={() => console.log(id)} className={styles.wrapper} {...props}>
             <Skeleton height="64px" width="64px" borderRadius={14} isLoaded>
                 <Image className={styles.image} src={img} alt=""/>
             </Skeleton>
