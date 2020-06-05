@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   height: rem(240px);
   background-size: cover;
   transform: translateZ(0);
@@ -14,7 +14,6 @@
   align-items: center;
   align-content: center;
   padding-left:rem(24px) ;
-  //filter: brightness(75%);
 }
 
 .heading {

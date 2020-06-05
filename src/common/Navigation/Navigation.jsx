@@ -7,27 +7,27 @@ import {Text, Icon, IconButton} from "@chakra-ui/core/";
 import {AppContext} from "../../App";
 import Heading from "../../components/Heading/Heading";
 
-function getPageName(value) {
-    switch (value) {
-        case '/':
-            return 'Home';
-        case '/event/':
-            return 'Event';
-        default:
-            return 'Page';
-    }
-}
-
 function Navigation() {
     const context = useContext(AppContext);
     const location = useLocation().pathname;
     const history = useHistory();
 
-    if (context.userID !== 0) {
+    function getPageName(value) {
+        switch (value) {
+            case '/':
+                return 'Home';
+            default:
+                return location.split("/").slice(1)[0].charAt(0).toUpperCase() +
+                    location.split("/").slice(1)[0].slice(1);
+        }
+    }
+
+    console.log(location.split("/").slice(1)[0]);
+    if (context.userID !== 0 && context.user) {
         return (
             <div className={styles.wrapper}>
                 {location !== "/" && (
-                    <button className={styles.buttonBack} onClick={() => history.replace("/")}>
+                    <button  className={`${location.split("/").slice(1)[0] === "event" ? styles.whiteText : styles.blackText}`} onClick={() => history.replace("/")}>
                         <Icon name="arrow-back" size="24px"/> Back
                     </button>
                 )}
@@ -41,12 +41,12 @@ function Navigation() {
                     />
                 )}
                 <div>
-                    <Text fontWeight="bold">
+                    <Text className={`${location.split("/").slice(1)[0] === "event" ? styles.whiteText : styles.blackText}`} fontWeight="bold">
                         {getPageName(location)}
                     </Text>
                 </div>
-                <div className={styles.avatar}>
-                    <img src={robert} alt=""/>
+                <div className={styles.avatar} onClick={() => history.replace(`/profile/${context.userID}`)}>
+                    <img src={context.user.profilePhotoUrl} alt=""/>
                     <div className={styles.avatarBadge}>
                         <Text fontSize="xs">3</Text>
                     </div>

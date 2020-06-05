@@ -1,4 +1,4 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import {Switch, Route, useLocation, useHistory} from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import {ThemeProvider, CSSReset, theme} from "@chakra-ui/core";
@@ -6,6 +6,7 @@ import Navigation from "./common/Navigation/Navigation";
 import Event from "./pages/Event/Event";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
+import API from "./api";
 
 const fonts = ["heading", "body", "mono"];
 fonts.heading = '"Poppins", sans-serif';
@@ -81,8 +82,20 @@ export const AppContext = createContext();
 
 function App() {
     const [userID, setUserID] = useState(0);
+    const [user, setUser] = useState();
     const location = useLocation().pathname;
     const history = useHistory();
+
+    const getData = async () => {
+        await API.get(`profile/${userID}`)
+            .then(response => {
+                setUser(response.data);
+                // console.log(response.data);
+            })
+            .catch(error => {
+                console.log('Woops', error);
+            });
+    };
 
     if (location !== "/login" && userID === 0) {
         if (localStorage.getItem('myID')) {
@@ -92,9 +105,15 @@ function App() {
         }
     }
 
+    useEffect(() => {
+        if(user === undefined && userID !== 0) {
+            getData();
+        }
+    }, [userID]);
+
     return (
         <ThemeProvider theme={customTheme}>
-            <AppContext.Provider value={{userID, setUserID}}>
+            <AppContext.Provider value={{userID, setUserID, user}}>
                 <CSSReset/>
                 <Navigation/>
                 <Switch>

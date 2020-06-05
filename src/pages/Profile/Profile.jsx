@@ -11,6 +11,9 @@ import {AppContext} from "../../App";
 import ActivitiesBlock from "../../components/ActivitiesBlock/ActivitiesBlock";
 import AvailableTime from "../../components/AvailableTime/AvailableTime";
 import EventsCalendarBlock from "../../components/EventsCalendarBlock/EventsCalendarBlock";
+import EffortLevel from "../../components/EffortLevel/EffortLevel";
+import EventsHistoryBlock from "../../components/EventsHistoryBlock/EventsHistoryBlock";
+import ProfileCover from "../../components/ProfileCover/ProfileCover";
 
 function Profile() {
     const eventId = useParams();
@@ -32,9 +35,12 @@ function Profile() {
     }, [context.userID, eventId.id]);
     return (
         <div className={styles.wrapper}>
+            <ProfileCover/>
             <ActivitiesBlock/>
             <AvailableTime/>
+            <EffortLevel/>
             <EventsCalendarBlock/>
+            <EventsHistoryBlock/>
         </div>
     );
 }

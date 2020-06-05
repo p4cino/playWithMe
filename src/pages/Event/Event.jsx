@@ -18,7 +18,7 @@ function Event() {
         const getData = async () => {
             await API.get(`event/${context.userID}/single-event/${eventId.id}`)
                 .then(response => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     setEvents(response.data);
                 })
                 .catch(error => {

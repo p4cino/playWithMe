@@ -8,6 +8,10 @@
 .heading {
   width: 100%;
   display: block;
+
+  h2 {
+    padding-bottom: rem(15px);
+  }
 }
 
 .description {

@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react';
 
-import styles from './EventsCalendarBlock.module.scss';
+import styles from './EventsHistoryBlock.module.scss';
 import {Text} from "@chakra-ui/core/";
 import Heading from "../Heading/Heading";
 
@@ -8,7 +8,7 @@ interface Props {
     description?: string;
 }
 
-const EventsCalendarBlock: FunctionComponent<Props> = (
+const EventsHistoryBlock: FunctionComponent<Props> = (
     {
         description,
         ...props
@@ -16,10 +16,9 @@ const EventsCalendarBlock: FunctionComponent<Props> = (
 ) => {
     return (
         <div className={styles.wrapper} {...props}>
-
-            <div className={styles.heading}>
+            <div className={styles.historyHeading}>
                 <Heading style={{fontStyle: 'italic'}}>
-                    Events calendar
+                    History events
                 </Heading>
             </div>
             <div className={styles.description}>
@@ -52,8 +51,9 @@ const EventsCalendarBlock: FunctionComponent<Props> = (
                     </li>
                 </ul>
             </div>
+
         </div>
     );
 };
 
-export default EventsCalendarBlock;
+export default EventsHistoryBlock;
