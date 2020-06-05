@@ -56,7 +56,7 @@ function EventsBlocks() {
                                         img={event.backgroundUrl}
                                         id={event.id}
                                         heading={event.name}
-                                        date={event.startDateFormatted}
+                                        date={event.dayDetails.timeOfDay}
                                         localization={event.localization}
                                         participants={event.participants}
                                         avatar={event.owner.profilePhotoUrl}

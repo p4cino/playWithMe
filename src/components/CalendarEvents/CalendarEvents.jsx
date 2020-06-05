@@ -51,7 +51,7 @@ function CalendarEvents() {
                                             <EventBlock
                                                 id={event.id}
                                                 heading={event.name}
-                                                date={event.startDateFormatted}
+                                                date={event.dayDetails.timeOfDay}
                                                 localization={event.localization}
                                                 img={event.backgroundUrl}
                                                 participants={event.participants}

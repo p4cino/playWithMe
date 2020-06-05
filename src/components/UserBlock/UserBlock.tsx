@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {Image} from "@chakra-ui/core";
+import {Image, Skeleton} from "@chakra-ui/core";
 // @ts-ignore
 import {useHistory} from 'react-router-dom';
 
@@ -23,13 +23,19 @@ const UserBlock: FunctionComponent<Props> = (
 ) => {
     const history = useHistory();
 
-    return (
-        <figure onClick={() => history.replace(`/profile/${id}`)} className={styles.wrapper} {...props}>
-            <Image className={styles.image} src={img} alt=""/>
-            <figcaption className="">
-            </figcaption>
-        </figure>
-    );
+    if(img) {
+        return (
+            <figure onClick={() => history.replace(`/profile/${id}`)} className={styles.wrapper} {...props}>
+                <Image className={styles.image} src={img} fallbackSrc="https://via.placeholder.com/60" alt=""/>
+            </figure>
+        );
+    } else {
+        return (
+            <figure onClick={() => history.replace(`/profile/${id}`)} className={styles.wrapper} {...props}>
+                <Skeleton height="40px" my="10px" />
+            </figure>
+        )
+    }
 };
 
 export default UserBlock;
