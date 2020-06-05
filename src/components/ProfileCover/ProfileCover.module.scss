@@ -7,10 +7,69 @@
   border-bottom-left-radius: rem($size-normal);
   border-bottom-right-radius: rem($size-normal);
   color: $color-white;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
   margin-top: rem(-97px);
+  padding-top: rem(60px);
   background-color: #F5F5F5;
 }
 
+.avatar {
+  width: rem(88px);
+  height: rem(88px);
+  margin: rem(0 24px);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    border-radius: rem(16px);
+  }
+}
+
+.person {
+  display: flex;
+  margin-bottom: rem(32px);
+}
+
+.name {
+  font-size: rem($size-normal);
+  font-weight: $font-weight-black;
+  color: $color-black;
+  font-style: italic;
+  line-height: rem(32px);
+}
+
+.location {
+  color: $color-gray;
+  font-size: rem(14px);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-content: space-between;
+  margin: rem(0 24px);
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  width: 33%;
+  color: $color-black;
+}
+
+.event {
+  width: 100%;
+  color: $color-gray;
+  font-size: rem(14px);
+  line-height: rem(24px);
+}
+
+.number {
+  line-height: rem(24px);
+  font-size: rem(18px);
+  font-weight: 700;
+}

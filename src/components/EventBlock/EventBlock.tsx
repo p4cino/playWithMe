@@ -1,10 +1,9 @@
 import React, {FunctionComponent} from 'react';
-import {Avatar, AvatarGroup, Stack, Image, Skeleton, Text} from "@chakra-ui/core";
+import {Avatar, AvatarGroup, Stack, Image, Text} from "@chakra-ui/core";
 // @ts-ignore
 import {useHistory} from 'react-router-dom';
 
 import styles from './EventBlock.module.scss';
-import SliderGlide from "../SliderGlide/SliderGlide";
 
 
 interface Props {

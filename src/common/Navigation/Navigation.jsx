@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import {useHistory, useLocation} from 'react-router-dom';
 
 import styles from "./Navigation.module.scss";
-import robert from "../../assets/images/robert.png";
 import {Text, Icon, IconButton} from "@chakra-ui/core/";
 import {AppContext} from "../../App";
 import Heading from "../../components/Heading/Heading";
@@ -22,13 +21,12 @@ function Navigation() {
         }
     }
 
-    console.log(location.split("/").slice(1)[0]);
     if (context.userID !== 0 && context.user) {
         return (
             <div className={styles.wrapper}>
                 {location !== "/" && (
                     <button  className={`${location.split("/").slice(1)[0] === "event" ? styles.whiteText : styles.blackText}`} onClick={() => history.replace("/")}>
-                        <Icon name="arrow-back" size="24px"/> Back
+                        <Icon name="newArrow" />
                     </button>
                 )}
                 {location === "/" && (

@@ -1,5 +1,7 @@
 import React, {FunctionComponent} from 'react';
 import {Image} from "@chakra-ui/core";
+// @ts-ignore
+import {useHistory} from 'react-router-dom';
 
 import styles from './UserBlock.module.scss';
 
@@ -19,9 +21,10 @@ const UserBlock: FunctionComponent<Props> = (
         ...props
     }
 ) => {
+    const history = useHistory();
 
     return (
-        <figure onClick={() => console.log(id)} className={styles.wrapper} {...props}>
+        <figure onClick={() => history.replace(`/profile/${id}`)} className={styles.wrapper} {...props}>
             <Image className={styles.image} src={img} alt=""/>
             <figcaption className="">
             </figcaption>

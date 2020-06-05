@@ -1,7 +1,6 @@
 import React, {FunctionComponent} from 'react';
 
 import styles from './EventsCalendarBlock.module.scss';
-import {Text} from "@chakra-ui/core/";
 import Heading from "../Heading/Heading";
 
 interface Props {

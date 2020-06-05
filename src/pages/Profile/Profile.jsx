@@ -1,13 +1,8 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 import styles from './Profile.module.scss';
-import EventCover from "../../components/EventCover/EventCover";
-import DescriptionBlock from "../../components/DescriptionBlock/DescriptionBlock";
-import {Icon, Box, Text} from "@chakra-ui/core";
-import MembersList from "../../components/MembersList/MembersList";
 import API from "../../api";
-import {AppContext} from "../../App";
 import ActivitiesBlock from "../../components/ActivitiesBlock/ActivitiesBlock";
 import AvailableTime from "../../components/AvailableTime/AvailableTime";
 import EventsCalendarBlock from "../../components/EventsCalendarBlock/EventsCalendarBlock";
@@ -16,26 +11,25 @@ import EventsHistoryBlock from "../../components/EventsHistoryBlock/EventsHistor
 import ProfileCover from "../../components/ProfileCover/ProfileCover";
 
 function Profile() {
-    const eventId = useParams();
-    const context = useContext(AppContext);
-    const [event, setEvents] = useState([]);
+    const event = useParams();
+    const [user, setUser] = useState([]);
 
     useEffect(() => {
         const getData = async () => {
-            await API.get(`event/${context.userID}/single-event/${eventId.id}`)
+            await API.get(`profile/${event.id}`)
                 .then(response => {
-                    console.log(response.data);
-                    setEvents(response.data);
+                    setUser(response.data);
+                    console.log(response.data.localization.name);
                 })
                 .catch(error => {
                     console.log('Woops', error);
                 });
         };
         getData();
-    }, [context.userID, eventId.id]);
+    }, [event.id]);
     return (
         <div className={styles.wrapper}>
-            <ProfileCover/>
+            <ProfileCover avatar={user.profilePhotoUrl} name={user.firstName} surName={user.lastName} localization="Łódź Górna" />
             <ActivitiesBlock/>
             <AvailableTime/>
             <EffortLevel/>

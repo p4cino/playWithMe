@@ -67,6 +67,11 @@ const customIcons = {
             </svg>
         )
     },
+    newArrow: {
+        path: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="7.41" height="12" viewBox="0 0 7.41 12"><path d="M15.41,16.58,10.83,12l4.58-4.59L14,6,8,12l6,6Z" transform="translate(-8 -6)"/></svg>
+        )
+    },
 };
 const customTheme = {
     ...theme,

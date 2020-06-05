@@ -1,9 +1,12 @@
 declare const styles: {
     readonly wrapper: string;
-    readonly heading: string;
+    readonly avatar: string;
+    readonly person: string;
+    readonly name: string;
+    readonly location: string;
     readonly footer: string;
-    readonly icon: string;
-    readonly difficulty: string;
-    readonly badgeWrapper: string;
+    readonly column: string;
+    readonly event: string;
+    readonly number: string;
 };
 export = styles;
